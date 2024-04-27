@@ -1,0 +1,1 @@
+select * from artist_type order by name asc;
