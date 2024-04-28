@@ -7,4 +7,4 @@
   join area on artist.area = area.id
   join release_info on release_info.release = release.id
   where area.name = 'United Kingdom' and artist.name = 'The Beatles' and medium_format.name = '12" Vinyl' and date_year <= 1970
-  order by release_info.date_year , release.name;
+  order by release_info.date_year , release.name
