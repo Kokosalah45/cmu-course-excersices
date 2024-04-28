@@ -1,4 +1,4 @@
- select artist.name , begin_date_year , end_date_year , area.name , release_info.date_year  , medium_format.name , release.id , release.name  from release
+ select  release.name , release_info.date_year from release
   join medium on release.id = medium.release
   join medium_format on medium_format.id = medium.format
   join artist_credit on artist_credit.id = release.artist_credit
