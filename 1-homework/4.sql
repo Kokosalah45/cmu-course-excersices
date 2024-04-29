@@ -1,6 +1,5 @@
+with comment_ranking_cte as (
 
-select work_name, work_type, comment, comment_length
-from (
     select work_type.name as work_type, work.name as work_name, comment , LENGTH(comment) comment_length , DENSE_RANK() over (
         partition by work_type.name 
         order by LENGTH(comment) desc
@@ -11,4 +10,7 @@ from (
     order by work_type.name asc , work.name asc
 )
 
+
+select work_name, work_type, comment, comment_length
+from comment_ranking_cte
 where  longest_comment_ranking = 1;
